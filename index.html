@@ -40,7 +40,7 @@
     </div>
     <div>
         <h2> Register Now</h2>
-        <form method="POST" action="https://script.google.com/macros/s/AKfycbyB1z7b8XHHrpYOD2_VR9ytxBGCO0D49bOOm0VlZoUqhdpaexiXUBrz0NL8TUAdv8By/exec">
+        <form method="POST" id="registrationForm">
             <label for="name"> Ім'я та прізвище:</label>
             <input type="text" id="name" name="name" placeholder="Онищук Влада" required> 
             <br>
@@ -58,6 +58,33 @@
             <label for="agree"> Я погоджуюсь на умови і правила проведення заходу</label>
             <button type="submit">Надіслати форму </button>
         </form>
+        <!-- Місце для повідомлення після відправки -->
+<div id="formMessage" style="margin-top:10px; color: green;"></div>
+        <script>
+const form = document.getElementById("registrationForm");
+const messageDiv = document.getElementById("formMessage");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault(); // зупиняємо стандартну відправку
+
+    const formData = new FormData(form);
+
+    fetch("https://script.google.com/macros/s/AKfycbyB1z7b8XHHrpYOD2_VR9ytxBGCO0D49bOOm0VlZoUqhdpaexiXUBrz0NL8TUAdv8By/exec", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(result => {
+        messageDiv.textContent = "Дякуємо за реєстрацію!";
+        form.reset(); // очищаємо форму
+    })
+    .catch(error => {
+        console.error("Помилка:", error);
+        messageDiv.textContent = "Сталася помилка. Спробуйте пізніше.";
+        messageDiv.style.color = "red";
+    });
+});
+</script>
     </div>
     <div>
         
