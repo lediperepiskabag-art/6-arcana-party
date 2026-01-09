@@ -1,0 +1,13 @@
+/* Основний стиль сторінки */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: linear-gradient(to bottom, #1a1a40, #3a1a5f);
+    color: #fdfdfd;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #ffd700;
+}
