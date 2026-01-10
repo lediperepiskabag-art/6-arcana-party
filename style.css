@@ -11,43 +11,17 @@ h1, h2 {
     font-family: 'Poppins', sans-serif;
    }
 
-/* Преміальний золотий текст: заливка + рамка + глянець */
 .gold-text {
-    position: relative;
-
     background: linear-gradient(
         180deg,
-        #fff6c9 0%,
-        #ffd700 30%,
-        #d4af37 55%,
-        #b8860b 75%,
-        #fff2b2 100%
+        #b8860b,
+        #ffd700,
+        #fff2b2,
+        #ffd700,
+        #b8860b
     );
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    text-shadow:
-        1px 1px 0 #8a6a1f,
-       -1px 1px 0 #8a6a1f,
-        1px -1px 0 #8a6a1f,
-       -1px -1px 0 #8a6a1f,
-        0 2px 5px rgba(255, 215, 0, 0.3);
 }
-.gold-text::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 0;
-    top: 0;
-
-    background: linear-gradient(
-        180deg,
-        rgba(255,255,255,0.85),
-        rgba(255,255,255,0)
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    pointer-events: none;
-}
-
