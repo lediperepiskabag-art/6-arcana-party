@@ -11,21 +11,17 @@ h1, h2 {
     font-family: 'Poppins', sans-serif;
    }
 /* Золотий текст із сяйвом */
-.gold-text {
-    background: linear-gradient(
-        90deg,
-        #b8860b,
-        #ffd700,
-        #fff2b2,
-        #ffd700,
-        #b8860b
-    );
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow:
-        0 0 6px rgba(255, 215, 0, 0.4),
-        0 0 12px rgba(255, 215, 0, 0.25);
+   .gold-text {
+  background-image: linear-gradient(
+    to bottom,
+    #ffd700, /* Золотой */
+    #ffeb3b, /* Светло-золотой */
+    #daa520  /* Темно-золотой */
+  );
+  -webkit-background-clip: text; /* Для Chrome/Safari */
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0px 0px 8px rgba(255, 215, 0, 0.8), /* Мягкая тень */
+               0px 1px 1px rgba(255, 255, 255, 0.5), /* Блик */
+               0px 2px 2px rgba(0, 0, 0, 0.2); /* Контур */
 }
-
