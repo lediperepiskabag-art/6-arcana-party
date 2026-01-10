@@ -1,27 +1,188 @@
-/* Основний стиль сторінки */
-body {
-    font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(to bottom, #1a1a40, #3a1a5f);
-    color: #fdfdfd;
-    margin: 0;
-    padding: 0;
+/*Основний стиль сторінки */
+body { 
+  font-family: 'Open Sans', sans-serif; /* Комбінуємо градієнт та текстуру */ 
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'), /* текстура */ 
+  linear-gradient(to bottom, #1a1a40, #3a1a5f); /* градієнт */ 
+  background-repeat: repeat; /* текстура повторюється */ 
+  background-attachment: fixed; /* фон фіксований при скролі */ 
+  background-size: auto, cover; /* текстура зберігає розмір, градієнт покриває весь екран */ 
+  color: #fdfdfd; 
+  margin: 0; 
+  padding: 0; 
+  text-align: center; 
+  
 }
 
-h1, h2 {
-    font-family: 'Poppins', sans-serif;
-   }
+h1, h2 { 
+  font-family: 'Poppins', sans-serif;
+  }
+  
+div:first-child p {
+    padding: 0 50px;  /* відступ 50px зліва і справа */
+}
 
 .gold-text {
     background: linear-gradient(
-        180deg,
-        #b8860b,
-        #ffd700,
+        150deg,
+        #e6b235,
+        #fadf50,
         #fcea90,
-        #ffd700,
-        #b8860b
+        #fadf50,
+        #e6b235
     );
 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+}
+
+.event-structure h3,
+.event-structure p {
+    text-align: left;       /* вирівнювання по лівому краю */
+    padding: 0 50px;        /* відступи зліва і справа */
+    margin: 10px 0;         /* вертикальні відступи */
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: separate;   
+    border-spacing: 0;           /* відстань між клітинками */
+    border-radius: 10px;
+    overflow: hidden;            /* обрізає клітинки на кутах */
+    border: 1px solid #fff;      /* зовнішня рамка */
+}
+
+table td, table th {
+    padding: 5px 15px;
+    border: 1px solid rgba(255,255,255,0.5); /* внутрішні рамки */
+    text-align: center;
+}
+
+label, input, select {
+    margin-bottom: 8px;  /* вертикальний відступ між елементами */
+}
+
+input, button {
+    border-radius: 7px;
+    padding: 5px 6px;
+}
+
+select {
+    border-radius: 10px;                  
+    padding: 5px 6px;                    /* відступи всередині поля */
+    border: 1px solid #fff;               /* рамка */
+  
+}
+
+ol {
+    list-style-position: inside; /* цифра стає всередині блоку li */
+    padding-left: 0;             /* прибираємо стандартний відступ списку */
+    text-align: center;           /* центр всього тексту всередині li */
+}
+
+ol li {
+    font-weight: bold; /* назва правила жирним */
+}
+
+ol li p {
+    font-weight: normal; /* текст у параграфі — звичайний */
+}
+
+.posylanyarules {
+   display: inline-block;
+    color: #fff;               /* білий колір тексту посилання */
+    margin: 20px 0;
+    
+}
+button {
+    border-radius: 7px;                         /* заокруглені кути */
+    padding: 5px 6px;                          /* внутрішні відступи */
+    border: 1px solid #fff;                     /* рамка */
+    background-color: rgba(255, 255, 255, 0.1); /* легка прозорість для темного фону */
+    color: #fff;                                /* колір тексту */
+    font-size: 16px;
+    cursor: pointer;                             /* показує курсор руки при наведенні */
+    transition: all 0.3s ease;                  /* плавний перехід для hover */
+}
+
+
+button:hover {
+    background-color: rgba(255, 223, 80, 0.4); /* світло-золотий напівпрозорий фон */
+    color: #fff;                                /* текст залишаємо білим */
+    transform: scale(1.05);                     /* трохи збільшуємо кнопку при наведенні */
+    box-shadow: 0 0 10px rgba(255, 223, 80, 0.5); /* світіння для містичності */
+}
+
+#rulesModal {
+    position: fixed;              /* фіксується відносно екрану */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6); /* напівпрозоре затемнення */
+
+    display: none;                /* поки приховане */
+    justify-content: center;      /* центрування по горизонталі */
+    align-items: center;          /* центрування по вертикалі */
+
+    z-index: 1000;                /* поверх усього */
+}
+
+#rulesModal > div {
+   position: relative; 
+    background: rgba(58, 26, 95, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    max-width: 500px;
+    width: 90%;
+
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+}
+
+#rulesModal span {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    font-size: 28px;
+    cursor: pointer;
+    color: #ffd700;
+}
+
+.message {
+    display: none;                 /* блок під текст */
+    padding: 10px 10px;                    /* внутрішні відступи */
+    background-color: rgba(255, 255, 255, 0.3); /* білий майже прозорий фон */
+    border-radius: 12px;                   /* заокруглені краї */
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px auto;                     /* відступ зверху/знизу та центр */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /* легка тінь */
+    max-width: 500px;                      /* щоб не розтягувалось дуже широко */
+    color: #fce677;                           /* стандартний колір для успіху */
+}
+.message.error {
+    color: red;                             /* колір для помилки */
+}
+
+
+.contact {
+    display: flex;             /* елементи в рядок */
+    align-items: center;       /* вирівнювання по вертикалі */
+    justify-content: center;   /* центр по горизонталі */
+    gap: 10px;                 /* відстань між текстом і посиланням */
+    margin: 20px 0;            /* вертикальні відступи зверху/знизу */
+}
+
+.contact a {
+    color: #fff;               /* білий колір тексту посилання */
+    text-decoration: none;     /* прибираємо підкреслення */
+    font-weight: bold;         /* жирний текст для виділення */
+    font-size: 22px;
+}
+
+.contact a:hover {
+    text-decoration: underline; /* підкреслення при наведенні */
 }
